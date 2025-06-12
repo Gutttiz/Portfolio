@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Francisco | Portfolio Minimalista</title>
+  <link rel="stylesheet" href="Styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="intro-animation">
+    <div class="block block-left"></div>
+    <div class="block block-right"></div>
+    <div class="intro-text">
+      <span>Portfolio</span>
+    </div>
+  </div>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sobre-mi">
+      <h1>Francisco</h1>
+      <p>Soy desarrollador web en formación. Me gusta crear cosas simples, limpias y funcionales. Este es mi portfolio minimalista.</p>
+    </section>
+
+    <section id="proyectos">
+      <h2>Proyectos</h2>
+      <div class="proyecto">
+        <h3>Mi primer sitio web</h3>
+        <p>Un sitio personal hecho con HTML y CSS.</p>
+        <a href="#">Ver en GitHub</a>
+      </div>
+      <div class="proyecto">
+        <h3>App de tareas</h3>
+        <p>Aplicación simple para gestionar tareas diarias.</p>
+        <a href="#">Ver en GitHub</a>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Git</li>
+      </ul>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form action="mailto:tuemail@ejemplo.com" method="post" enctype="text/plain">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="email">Correo:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <p>O escribime a <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></p>
+      <div>
+        <a href="#">GitHub</a> |
+        <a href="#">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Francisco</p>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const intro = document.getElementById('intro-animation');
+      const text = intro.querySelector('.intro-text');
+      setTimeout(() => {
+        text.style.opacity = 1;
+      }, 400); // Aparece el texto
+      setTimeout(() => {
+        intro.classList.add('active');
+      }, 1700); // Se van los bloques
+      setTimeout(() => {
+        intro.style.opacity = 0;
+        intro.style.pointerEvents = 'none';
+      }, 2400); // Se desvanece el overlay
+      setTimeout(() => {
+        intro.remove();
+      }, 3000); // Elimina el overlay del DOM
+    });
+  </script>
+</body>
+</html>
