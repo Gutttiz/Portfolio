@@ -613,3 +613,9 @@ body.dark-mode .btn-contacto:focus {
   background: #444 !important;
   color: #fff !important;
 }
+#photoshop,
+#proyectos,
+#habilidades,
+#contacto {
+  scroll-margin-top: 100px; /* Ajusta según el alto de tu header */
+}

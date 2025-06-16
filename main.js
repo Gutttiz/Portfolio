@@ -88,3 +88,7 @@ document.querySelectorAll('.slider').forEach(slider => {
 document.getElementById('toggle-dark').addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
+document.getElementById('link-sobre-mi').addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
