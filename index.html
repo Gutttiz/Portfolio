@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+  <!-- Animación de inicio -->
   <div id="intro-animation">
     <div class="block block-left"></div>
     <div class="block block-right"></div>
@@ -35,6 +36,7 @@
   </header>
 
   <main class="hidden-after-intro">
+    <!-- SOBRE MÍ -->
     <section class="hero" id="sobre-mi">
       <img src="Imagenportada.jpg" alt="Imagen de portada" class="hero-img ocultar-despues-intro">
       <div class="hero-text">
@@ -43,13 +45,14 @@
       </div>
     </section>
 
+    <!-- PHOTOSHOP -->
     <section id="photoshop">
       <h2>Photoshop</h2>
       <div class="proyectos-flex">
         <article class="proyecto">
           <img src="Trabajo1.png" alt="Proyecto Photoshop 1" class="ps-thumb">
           <h3>Póster de película ficticia "The Outsider"</h3>
-          <p>Póster ficticio de película creado en Photoshop, combinando imágenes, tipografía simular un estreno cinematográfico.</p>
+          <p>Póster ficticio de película creado en Photoshop, combinando imágenes y tipografía para simular un estreno cinematográfico.</p>
         </article>
         <article class="proyecto">
           <img src="Trabajo2.png" alt="Proyecto Photoshop 2" class="ps-thumb">
@@ -64,6 +67,7 @@
       </div>
     </section>
 
+    <!-- PROYECTOS -->
     <section id="proyectos">
       <h2>Proyectos</h2>
       <div class="proyectos-flex">
@@ -71,8 +75,8 @@
           <div class="slider">
             <img src="Trabajo5.png" alt="Space Invaders 1" class="slider-img active">
             <img src="Trabajo4.png" alt="Space Invaders 2" class="slider-img">
-            <button class="slider-btn prev">&#8592;</button>
-            <button class="slider-btn next">&#8594;</button>
+            <button class="slider-btn prev" aria-label="Imagen anterior">&#8592;</button>
+            <button class="slider-btn next" aria-label="Imagen siguiente">&#8594;</button>
           </div>
           <h3>Space Invaders</h3>
           <p>Juego de naves con el fin de acabar con los enemigos.</p>
@@ -80,6 +84,7 @@
       </div>
     </section>
 
+    <!-- HABILIDADES -->
     <section id="habilidades">
       <h2>Habilidades</h2>
       <div class="skills-cards">
@@ -91,12 +96,12 @@
         <div class="skill-card">
           <i class="fa-brands fa-css3-alt"></i>
           <h3>CSS</h3>
-          <p>Estilos y el diseño visual para la web.</p>
+          <p>Estilos y diseño visual para la web.</p>
         </div>
         <div class="skill-card">
           <i class="fa-brands fa-js"></i>
           <h3>JavaScript</h3>
-          <p>Lo interactivo en el navegador.</p>
+          <p>Interactividad y lógica en el navegador.</p>
         </div>
         <div class="skill-card">
           <i class="fa-brands fa-python"></i>
@@ -111,11 +116,11 @@
       </div>
     </section>
 
+    <!-- CONTACTO -->
     <section id="contacto">
       <h2>Contacto</h2>
       <a class="btn btn-contacto" href="https://mail.google.com/mail/?view=cm&to=franciscogutierrez.fngf@gmail.com" target="_blank" rel="noopener">franciscogutierrez.fngf@gmail.com</a>
-      <a class="btn btn-contacto" href="https://github.com/Gutttiz" target="_blank">GitHub</a>
-      </div>
+      <a class="btn btn-contacto" href="https://github.com/Gutttiz" target="_blank" rel="noopener">GitHub</a>
     </section>
   </main>
 
@@ -123,6 +128,7 @@
     <small>&copy; 2025 Portfolio Profesional Personalizado</small>
   </footer>
 
+  <!-- Visor de imagen en pantalla completa -->
   <div id="fullscreen-viewer" class="fullscreen-hidden">
     <img id="fullscreen-img" src="" alt="Vista en pantalla completa">
   </div>

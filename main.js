@@ -18,41 +18,33 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.hidden-after-intro').forEach(el => {
       el.classList.add('visible-after-intro');
     });
-    // Ocultar solo la imagen de portada
+    // Ocultar solo la imagen de portada si es necesario
     const portada = document.querySelector('.ocultar-despues-intro');
     if (portada) portada.classList.add('ocultar');
   }, 3000);
 });
+
+// Pantalla completa para imágenes de Photoshop
 document.querySelectorAll('.ps-thumb').forEach(img => {
   img.addEventListener('click', () => {
     const viewer = document.getElementById('fullscreen-viewer');
     const fullImg = document.getElementById('fullscreen-img');
-    fullImg.src = img.src;
-    viewer.classList.remove('fullscreen-hidden');
+    // Asigna el src y muestra el visor solo si hay imagen
+    if (img.src) {
+      fullImg.src = img.src;
+      viewer.classList.remove('fullscreen-hidden');
+      fullImg.style.display = 'block';
+    }
   });
 });
 
+// Cerrar visor de pantalla completa
 document.getElementById('fullscreen-viewer').addEventListener('click', () => {
   const viewer = document.getElementById('fullscreen-viewer');
   const fullImg = document.getElementById('fullscreen-img');
   viewer.classList.add('fullscreen-hidden');
-  setTimeout(() => { fullImg.src = ''; }, 300); // Espera la transición antes de limpiar el src
-});
-const skillDescriptions = {
-  html: "HTML5 es el lenguaje de marcado principal para crear la estructura de páginas web.",
-  css: "CSS3 se utiliza para diseñar y dar estilo visual a las páginas web, incluyendo colores, fuentes y layouts.",
-  js: "JavaScript permite agregar interactividad y lógica a las páginas web, como animaciones, validaciones y más.",
-  git: "Git es un sistema de control de versiones que permite gestionar y colaborar en proyectos de código de manera eficiente."
-};
-
-document.querySelectorAll('.skill-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.skill-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const desc = document.getElementById('skill-desc');
-    desc.textContent = skillDescriptions[btn.dataset.skill] || "";
-    desc.classList.add('visible');
-  });
+  fullImg.style.display = 'none';
+  fullImg.src = '';
 });
 // Carrusel para el proyecto Space Invaders
 document.querySelectorAll('.slider').forEach(slider => {
@@ -80,14 +72,19 @@ document.querySelectorAll('.slider').forEach(slider => {
         const viewer = document.getElementById('fullscreen-viewer');
         const fullImg = document.getElementById('fullscreen-img');
         fullImg.src = img.src;
+        fullImg.style.display = 'block'; // <-- Asegura que la imagen se muestre
         viewer.classList.remove('fullscreen-hidden');
       }
     });
   });
 });
+
+// Botón de modo oscuro/claro
 document.getElementById('toggle-dark').addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
+
+// Scroll manual hasta arriba para "Sobre mí"
 document.getElementById('link-sobre-mi').addEventListener('click', function(e) {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
